@@ -16,19 +16,43 @@
 //mostrar su estado.
 
 public class Gallina {
-    int idGallina;
-    int edad;
-    int huevosPuestos;
+    private int idGallina;
+    private int edad;
+    private int huevosPuestos;
+
+    public int getIdGallina() {
+        return idGallina;
+    }
+
+    public void setIdGallina(int idGallina) {
+        this.idGallina = idGallina;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getHuevosPuestos() {
+        return huevosPuestos;
+    }
+
+    public void setHuevosPuestos(int huevosPuestos) {
+        this.huevosPuestos = huevosPuestos;
+    }
     
-    void ponerHuevo(){
+    public void ponerHuevo(){
         huevosPuestos++;
     }
     
-    void envejecer(){
+    public void envejecer(){
         edad++;
     }
     
-    void mostrarEstado(){
+    public void mostrarEstado(){
         System.out.println("Identificador gallina: " + idGallina);
         System.out.println("Edad: " + edad);
         System.out.println("Huevos puestos: " + huevosPuestos);

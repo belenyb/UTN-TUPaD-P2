@@ -16,10 +16,10 @@ public class TP3 {
         // Ejercicio 1
         System.out.println("=== Ejercicio 1 ===");
         Estudiante estudiante = new Estudiante();
-        estudiante.nombre = "Belen";
-        estudiante.apellido = "Yarde Buller";
-        estudiante.curso = "Programación";
-        estudiante.calificacion = 8.0;
+        estudiante.setNombre("Belen");
+        estudiante.setApellido("Yarde Buller");
+        estudiante.setCurso("Programación");
+        estudiante.setCalificacion(8.0);
         estudiante.mostrarInfo();
         System.out.println("Modificando datos...");
         estudiante.subirCalificacion(2);
@@ -29,9 +29,9 @@ public class TP3 {
         // Ejercicio 2
         System.out.println("\n=== Ejercicio 2 ===");
         Mascota mascota = new Mascota();
-        mascota.nombre = "Crash";
-        mascota.especie = "Mestizo";
-        mascota.edad = 4;
+        mascota.setNombre("Crash");
+        mascota.setEspecie("Mestizo");
+        mascota.setEdad(4);
         mascota.mostrarInfo();
         System.out.println("Modificando datos...");
         mascota.cumplirAnios();
@@ -56,12 +56,12 @@ public class TP3 {
         // Ejercicio 4
         System.out.println("\n=== Ejercicio 4 ===");
         Gallina gallina1 = new Gallina();
-        gallina1.idGallina = 1;
-        gallina1.edad = 3;
-        gallina1.huevosPuestos = 5;
-        System.out.println("Datos iniciales de gallina " + gallina1.idGallina + "...");
+        gallina1.setIdGallina(1);
+        gallina1.setEdad(3);
+        gallina1.setHuevosPuestos(5);
+        System.out.println("Datos iniciales de gallina " + gallina1.getIdGallina() + "...");
         gallina1.mostrarEstado();
-        System.out.println("Simulando acciones de gallina " + gallina1.idGallina + "...");
+        System.out.println("Simulando acciones de gallina " + gallina1.getIdGallina() + "...");
         gallina1.envejecer();
         gallina1.envejecer();
         gallina1.ponerHuevo();
@@ -71,12 +71,12 @@ public class TP3 {
         gallina1.mostrarEstado();
 
         Gallina gallina2 = new Gallina();
-        gallina2.idGallina = 2;
-        gallina2.edad = 1;
-        gallina2.huevosPuestos = 2;
-        System.out.println("Datos iniciales de gallina " + gallina2.idGallina + "...");
+        gallina2.setIdGallina(2);
+        gallina2.setEdad(1);
+        gallina2.setHuevosPuestos(2);
+        System.out.println("Datos iniciales de gallina " + gallina2.getIdGallina() + "...");
         gallina2.mostrarEstado();
-        System.out.println("Simulando acciones de gallina " + gallina2.idGallina + "...");
+        System.out.println("Simulando acciones de gallina " + gallina2.getIdGallina() + "...");
         gallina2.envejecer();
         gallina2.ponerHuevo();
         gallina2.ponerHuevo();
@@ -89,9 +89,9 @@ public class TP3 {
         // Ejercicio 5
         System.out.println("\n=== Ejercicio 5 ===");
         NaveEspacial nave = new NaveEspacial();
-        nave.nombre = "Apollo";
-        nave.combustible = 50;
-        System.out.println("Estado inicial de " + nave.nombre + "...");
+        nave.setNombre("Apollo");
+        nave.setCombustible(50);
+        System.out.println("Estado inicial de " + nave.getNombre() + "...");
         nave.mostrarEstado();
         
         System.out.println("Intentar avanzar sin recargar...");

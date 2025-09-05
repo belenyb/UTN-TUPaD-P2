@@ -18,23 +18,55 @@
 
 
 public class Estudiante {
-    String nombre;
-    String apellido;
-    String curso;
-    double calificacion;
+    private String nombre;
+    private String apellido;
+    private String curso;
+    private double calificacion;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
     
-    void mostrarInfo(){
+    public void mostrarInfo(){
         System.out.println("Nombre: " + nombre);
         System.out.println("Apellido: " + apellido);
         System.out.println("Curso: " + curso);
         System.out.println("Calificacion: " + calificacion);
     }
     
-    void subirCalificacion(double puntos){
+    public void subirCalificacion(double puntos){
         calificacion += puntos;
     }
     
-    void bajarCalificacion(double puntos){
+    public void bajarCalificacion(double puntos){
         calificacion -= puntos;
     }
 }

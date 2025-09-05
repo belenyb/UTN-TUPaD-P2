@@ -18,9 +18,25 @@
 //recargar, luego recargar y avanzar correctamente. Mostrar el estado al final.
 
 public class NaveEspacial {
-    String nombre;
-    int combustible;
+    private String nombre;
+    private int combustible;
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCombustible() {
+        return combustible;
+    }
+
+    public void setCombustible(int combustible) {
+        this.combustible = combustible;
+    }
+    
     public void despegar() {
         if (combustible >= 10) {
             combustible -= 10;
