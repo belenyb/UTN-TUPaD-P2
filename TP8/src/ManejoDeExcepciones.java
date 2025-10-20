@@ -60,23 +60,38 @@ public class ManejoDeExcepciones {
     // 3. Lectura de archivo.
     // Leer un archivo de texto y mostrarlo. Manejar FileNotFoundException si el archivo no existe.
     public static void leerArchivo() {
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader br = null;
+
+        try {
             String ruta = "src/archivo-de-prueba.html";
+            br = new BufferedReader(new FileReader(ruta));
 
-            try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
-                String linea;
-                System.out.println("\n--- Contenido del archivo ---");
-                while ((linea = br.readLine()) != null) {
-                    System.out.println(linea);
+            String linea;
+            System.out.println("\n--- Contenido del archivo ---");
+            while ((linea = br.readLine()) != null) {
+                System.out.println(linea);
+            }
+            System.out.println("\n--- Fin del archivo ---");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: El archivo no existe o la ruta es incorrecta.");
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        } finally {
+            // Se usa el bloque finally para cerrar el BufferedReader
+            try {
+                if (br != null) {
+                    br.close();
                 }
-                System.out.println("\n--- Fin del archivo ---");
-
-            } catch (FileNotFoundException e) {
-                System.out.println("Error: El archivo no existe o la ruta es incorrecta.");
             } catch (IOException e) {
-                System.out.println("Error al leer el archivo: " + e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Exception: " + e.getMessage());
+                System.out.println("Error al cerrar el BufferedReader: " + e.getMessage());
+            }
+
+            if (scanner != null) {
+                scanner.close();
             }
         }
     }
